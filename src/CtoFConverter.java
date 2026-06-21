@@ -1,15 +1,32 @@
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+public class CtoFConverter
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        double celsius = 0;
+        double fahrenheit = 0;
+        String trash = "";
+        boolean done = false;
+        do
+        {
+            System.out.print("Enter a temperature in Celsius: ");
+            if(in.hasNextDouble())
+            {
+                celsius = in.nextDouble();
+                done = true;
+            }
+            else
+            {
+                trash = in.nextLine();
+                System.out.println("You entered " + trash + ". Please enter a valid number.");
+            }
+        }while(!done);
+        fahrenheit = (celsius * 9/5) + 32;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.println(celsius + " degrees Celsius is equal to " + fahrenheit + " degrees Fahrenheit.");
     }
 }
