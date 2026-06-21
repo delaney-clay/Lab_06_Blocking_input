@@ -9,6 +9,7 @@ public class RectangleInfo
         double width = 0;
         double area = 0;
         double perimeter = 0;
+        double diagonal = 0;
         boolean done = false;
         String trash = "";
 
@@ -45,6 +46,11 @@ public class RectangleInfo
             }
         }while(!done);
 
+        area = height * width;
+        perimeter = (2 * height) + (2 * width);
+        System.out.println("The area of the rectangle is " + area + " and the perimeter is " + perimeter + ".");
 
+        diagonal = Math.hypot(height, width);
+        System.out.println("The diagonal of the rectangle is " + diagonal + ".");
     }
 }
