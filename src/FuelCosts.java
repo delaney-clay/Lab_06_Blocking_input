@@ -19,7 +19,8 @@ public class FuelCosts
             if(in.hasNextDouble())
             {
                 gallons = in.nextDouble();
-                done = true
+                in.nextLine();
+                done = true;
             }
             else
             {
@@ -27,12 +28,15 @@ public class FuelCosts
                 System.out.println("You entered " + trash + ". Please enter a valid number.");
             }
         }while(!done);
+
+        done = false;
         do
         {
             System.out.print("Enter the fuel efficiency of the car in miles per gallon: ");
             if(in.hasNextDouble())
             {
                 fuelEfficiency = in.nextDouble();
+                in.nextLine();
                 done = true;
             }
             else
@@ -41,12 +45,15 @@ public class FuelCosts
                 System.out.println("You entered " + trash + ". Please enter a valid number.");
             }
         }while(!done);
+
+        done = false;
         do
         {
             System.out.print("Enter the price per gallon of fuel: ");
             if(in.hasNextDouble())
             {
                 pricePerGal = in.nextDouble();
+                in.nextLine();
                 done = true;
             }
             else
@@ -55,6 +62,7 @@ public class FuelCosts
                 System.out.println("You entered " + trash + ". Please enter a valid number.");
             }
         }while(!done);
+
         costHundredMiles = (100/fuelEfficiency) * pricePerGal;
         System.out.println("The cost of driving 100 miles is $" + costHundredMiles);
         fullTankRange = gallons * fuelEfficiency;
