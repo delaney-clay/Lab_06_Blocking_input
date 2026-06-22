@@ -18,27 +18,29 @@ public class HighorLow
             if(in.hasNextInt())
             {
                 guess = in.nextInt();
-                if(guess < 1 && guess > 10)
+                if(guess >= 1 && guess <= 10)
                 {
-                    System.out.println("You entered " + guess + ". Please enter a number 1-10.");
-                    done = false;
-                }
-                else if(guess < val)
-                {
-                    System.out.println("Your guess was too low! The number was " + val + ".");
-                    System.out.println("Try again.");
-                    done = false;
-                }
-                else if(guess > val)
-                {
-                    System.out.println("Your guess was too high! The number was " + val + ".");
-                    System.out.println("Try again.");
-                    done = false;
+                    if(guess < val)
+                    {
+                        System.out.println("Your guess was too low! The number was " + val + ".");
+                        System.out.println("Try again.");
+                        done = false;
+                    }
+                    else if(guess > val)
+                    {
+                        System.out.println("Your guess was too high! The number was " + val + ".");
+                        System.out.println("Try again.");
+                        done = false;
+                    }
+                    else
+                    {
+                        System.out.println("Your guess was correct! The number was " + val + ".");
+                        done = true;
+                    }
                 }
                 else
                 {
-                    System.out.println("Correct!");
-                    done = true;
+                    System.out.println("Invalid input: " + guess + ". Please enter a number between 1 and 10.");
                 }
             }
             else
