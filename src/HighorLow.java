@@ -7,13 +7,13 @@ public class HighorLow
     {
         Scanner in = new Scanner(System.in);
         Random generator = new Random();
-        int val = generator.nextInt(10)+1;
         int guess = 0;
         String trash = "";
         boolean done = false;
 
         do
         {
+            int val = generator.nextInt(10)+1;
             System.out.print("Guess a number between 1 and 10: ");
             if(in.hasNextInt())
             {
